@@ -3,11 +3,12 @@
 
 # 기본적인 화면 띄우기
 import pygame
-from constants.board import WIDTH, HEIGHT
+from board import WIDTH, HEIGHT
+from piece import PIECE_SIZE
 
 # pygame 초기화
 pygame.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH*PIECE_SIZE, HEIGHT*PIECE_SIZE))
 clock = pygame.time.Clock()
 running = True
 
@@ -16,8 +17,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    screen.fill("purple")
-
+    screen.fill("white")
     pygame.display.flip()
 
     # 60FPS
